@@ -17,7 +17,7 @@ A custom navigation for pan gesture pop &amp; maximum customization
  * Use SCNavigationController instead of UINavigationController
 
 ####DEMO
- * ![DEMO](http://ww3.sinaimg.cn/large/84efdcc6gw1ejibypsu1qg208w0fse81.gif)
+![DEMO](http://ww3.sinaimg.cn/large/84efdcc6gw1ejibypsu1qg208w0fse81.gif)
 
 ####License
 
