@@ -9,6 +9,7 @@
 #import "SCAppDelegate.h"
 
 #import "SCViewController.h"
+#import "SCNavigation.h"
 
 @implementation SCAppDelegate
 
@@ -17,7 +18,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     SCViewController *rootVC = [[SCViewController alloc] init];
-    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    SCNavigationController *rootNavigationController = [[SCNavigationController alloc] initWithRootViewController:rootVC];
     
     self.window.rootViewController = rootNavigationController;
     

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2929701519A38945007B5A02 /* navi_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2929701319A38945007B5A02 /* navi_mask@2x.png */; };
+		2929701619A38945007B5A02 /* navi_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2929701419A38945007B5A02 /* navi_shadow@2x.png */; };
+		29571D2E19A2EC6000675B56 /* SCBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2019A2EC6000675B56 /* SCBarButtonItem.m */; };
+		29571D2F19A2EC6000675B56 /* SCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2319A2EC6000675B56 /* SCNavigationController.m */; };
+		29571D3019A2EC6000675B56 /* SCNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2519A2EC6000675B56 /* SCNavigationItem.m */; };
+		29571D3119A2EC6000675B56 /* SCNavigationPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2719A2EC6000675B56 /* SCNavigationPopAnimation.m */; };
+		29571D3219A2EC6000675B56 /* SCNavigationPushAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2919A2EC6000675B56 /* SCNavigationPushAnimation.m */; };
+		29571D3319A2EC6000675B56 /* SCViewController+NaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2B19A2EC6000675B56 /* SCViewController+NaviBar.m */; };
+		29571D3419A2EC6000675B56 /* SCNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2D19A2EC6000675B56 /* SCNavigationBar.m */; };
+		29571D3C19A2ED3000675B56 /* ScrollViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D3919A2ED3000675B56 /* ScrollViewFrameAccessor.m */; };
+		29571D3D19A2ED3000675B56 /* ViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D3B19A2ED3000675B56 /* ViewFrameAccessor.m */; };
 		29670A05199D9EEE00B4A59B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29670A04199D9EEE00B4A59B /* Foundation.framework */; };
 		29670A07199D9EEE00B4A59B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29670A06199D9EEE00B4A59B /* CoreGraphics.framework */; };
 		29670A09199D9EEE00B4A59B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29670A08199D9EEE00B4A59B /* UIKit.framework */; };
@@ -33,6 +44,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2929701319A38945007B5A02 /* navi_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_mask@2x.png"; sourceTree = "<group>"; };
+		2929701419A38945007B5A02 /* navi_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_shadow@2x.png"; sourceTree = "<group>"; };
+		29571D1F19A2EC6000675B56 /* SCBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBarButtonItem.h; sourceTree = "<group>"; };
+		29571D2019A2EC6000675B56 /* SCBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBarButtonItem.m; sourceTree = "<group>"; };
+		29571D2119A2EC6000675B56 /* SCNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigation.h; sourceTree = "<group>"; };
+		29571D2219A2EC6000675B56 /* SCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationController.h; sourceTree = "<group>"; };
+		29571D2319A2EC6000675B56 /* SCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationController.m; sourceTree = "<group>"; };
+		29571D2419A2EC6000675B56 /* SCNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationItem.h; sourceTree = "<group>"; };
+		29571D2519A2EC6000675B56 /* SCNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationItem.m; sourceTree = "<group>"; };
+		29571D2619A2EC6000675B56 /* SCNavigationPopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationPopAnimation.h; sourceTree = "<group>"; };
+		29571D2719A2EC6000675B56 /* SCNavigationPopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationPopAnimation.m; sourceTree = "<group>"; };
+		29571D2819A2EC6000675B56 /* SCNavigationPushAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationPushAnimation.h; sourceTree = "<group>"; };
+		29571D2919A2EC6000675B56 /* SCNavigationPushAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationPushAnimation.m; sourceTree = "<group>"; };
+		29571D2A19A2EC6000675B56 /* SCViewController+NaviBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCViewController+NaviBar.h"; sourceTree = "<group>"; };
+		29571D2B19A2EC6000675B56 /* SCViewController+NaviBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCViewController+NaviBar.m"; sourceTree = "<group>"; };
+		29571D2C19A2EC6000675B56 /* SCNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationBar.h; sourceTree = "<group>"; };
+		29571D2D19A2EC6000675B56 /* SCNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationBar.m; sourceTree = "<group>"; };
+		29571D3719A2ED3000675B56 /* FrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameAccessor.h; sourceTree = "<group>"; };
+		29571D3819A2ED3000675B56 /* ScrollViewFrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewFrameAccessor.h; sourceTree = "<group>"; };
+		29571D3919A2ED3000675B56 /* ScrollViewFrameAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFrameAccessor.m; sourceTree = "<group>"; };
+		29571D3A19A2ED3000675B56 /* ViewFrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFrameAccessor.h; sourceTree = "<group>"; };
+		29571D3B19A2ED3000675B56 /* ViewFrameAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFrameAccessor.m; sourceTree = "<group>"; };
 		29670A01199D9EEE00B4A59B /* SCNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29670A04199D9EEE00B4A59B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29670A06199D9EEE00B4A59B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,6 +110,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2929701219A38945007B5A02 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2929701319A38945007B5A02 /* navi_mask@2x.png */,
+				2929701419A38945007B5A02 /* navi_shadow@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		29571D1E19A2EC6000675B56 /* SCNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				2929701219A38945007B5A02 /* Resources */,
+				29571D1F19A2EC6000675B56 /* SCBarButtonItem.h */,
+				29571D2019A2EC6000675B56 /* SCBarButtonItem.m */,
+				29571D2119A2EC6000675B56 /* SCNavigation.h */,
+				29571D2219A2EC6000675B56 /* SCNavigationController.h */,
+				29571D2319A2EC6000675B56 /* SCNavigationController.m */,
+				29571D2419A2EC6000675B56 /* SCNavigationItem.h */,
+				29571D2519A2EC6000675B56 /* SCNavigationItem.m */,
+				29571D2619A2EC6000675B56 /* SCNavigationPopAnimation.h */,
+				29571D2719A2EC6000675B56 /* SCNavigationPopAnimation.m */,
+				29571D2819A2EC6000675B56 /* SCNavigationPushAnimation.h */,
+				29571D2919A2EC6000675B56 /* SCNavigationPushAnimation.m */,
+				29571D2A19A2EC6000675B56 /* SCViewController+NaviBar.h */,
+				29571D2B19A2EC6000675B56 /* SCViewController+NaviBar.m */,
+				29571D2C19A2EC6000675B56 /* SCNavigationBar.h */,
+				29571D2D19A2EC6000675B56 /* SCNavigationBar.m */,
+			);
+			path = SCNavigation;
+			sourceTree = "<group>";
+		};
+		29571D3519A2ED3000675B56 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				29571D3619A2ED3000675B56 /* FrameAccessor */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		29571D3619A2ED3000675B56 /* FrameAccessor */ = {
+			isa = PBXGroup;
+			children = (
+				29571D3719A2ED3000675B56 /* FrameAccessor.h */,
+				29571D3819A2ED3000675B56 /* ScrollViewFrameAccessor.h */,
+				29571D3919A2ED3000675B56 /* ScrollViewFrameAccessor.m */,
+				29571D3A19A2ED3000675B56 /* ViewFrameAccessor.h */,
+				29571D3B19A2ED3000675B56 /* ViewFrameAccessor.m */,
+			);
+			path = FrameAccessor;
+			sourceTree = "<group>";
+		};
 		296709F8199D9EEE00B4A59B = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +195,8 @@
 		29670A0A199D9EEE00B4A59B /* SCNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				29571D3519A2ED3000675B56 /* Additions */,
+				29571D1E19A2EC6000675B56 /* SCNavigation */,
 				29670A13199D9EEE00B4A59B /* SCAppDelegate.h */,
 				29670A14199D9EEE00B4A59B /* SCAppDelegate.m */,
 				29670A19199D9EEE00B4A59B /* SCViewController.h */,
@@ -227,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29670A1D199D9EEE00B4A59B /* Images.xcassets in Resources */,
+				2929701519A38945007B5A02 /* navi_mask@2x.png in Resources */,
+				2929701619A38945007B5A02 /* navi_shadow@2x.png in Resources */,
 				29670A0F199D9EEE00B4A59B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,9 +335,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29571D3019A2EC6000675B56 /* SCNavigationItem.m in Sources */,
+				29571D3119A2EC6000675B56 /* SCNavigationPopAnimation.m in Sources */,
+				29571D3C19A2ED3000675B56 /* ScrollViewFrameAccessor.m in Sources */,
+				29571D2F19A2EC6000675B56 /* SCNavigationController.m in Sources */,
 				29670A15199D9EEE00B4A59B /* SCAppDelegate.m in Sources */,
+				29571D3219A2EC6000675B56 /* SCNavigationPushAnimation.m in Sources */,
+				29571D3419A2EC6000675B56 /* SCNavigationBar.m in Sources */,
 				29670A1B199D9EEE00B4A59B /* SCViewController.m in Sources */,
+				29571D3319A2EC6000675B56 /* SCViewController+NaviBar.m in Sources */,
+				29571D2E19A2EC6000675B56 /* SCBarButtonItem.m in Sources */,
 				29670A11199D9EEE00B4A59B /* main.m in Sources */,
+				29571D3D19A2ED3000675B56 /* ViewFrameAccessor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +466,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCNavigation/SCNavigation-Prefix.pch";
 				INFOPLIST_FILE = "SCNavigation/SCNavigation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -381,6 +480,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCNavigation/SCNavigation-Prefix.pch";
 				INFOPLIST_FILE = "SCNavigation/SCNavigation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -445,6 +545,7 @@
 				29670A35199D9EEF00B4A59B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29670A36199D9EEF00B4A59B /* Build configuration list for PBXNativeTarget "SCNavigationTests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +554,7 @@
 				29670A38199D9EEF00B4A59B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
