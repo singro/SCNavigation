@@ -8,6 +8,7 @@ A custom navigation for pan gesture pop &amp; maximum customization
  * Full custom navigation bar.
  * iOS7 Style pop animation with pan gesture
  * Pop animation based on previous status of navigation bar.
+ * Support iPhone 6 / 6 plus, iOS7+
 
 ####Third Parties
  * [FrameAccessor](https://github.com/AlexDenisov/FrameAccessor)
