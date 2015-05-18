@@ -181,7 +181,7 @@
     
     CGPoint location = [recognizer locationInView:self.view];
     
-    CGFloat progress = (location.x - startLocationX) / 320;
+    CGFloat progress = (location.x - startLocationX) / [UIScreen mainScreen].bounds.size.width;
     progress = MIN(1.0, MAX(0.0, progress));
     
 //    NSLog(@"progress:   %.2f", progress);

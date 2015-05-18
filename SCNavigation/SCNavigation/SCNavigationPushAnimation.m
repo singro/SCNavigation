@@ -7,6 +7,10 @@
 
 #import "SCNavigationPushAnimation.h"
 
+
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+
+
 @interface SCNavigationPushAnimation ()
 
 @end
@@ -31,8 +35,8 @@
     
     [containerView addSubview:fromViewController.view];
     [containerView addSubview:toViewController.view];
-    fromViewController.view.frame = CGRectMake(0, 0, 320, CGRectGetHeight(fromViewController.view.frame));
-    toViewController.view.frame = CGRectMake(320, 0, 320, CGRectGetHeight(toViewController.view.frame));
+    fromViewController.view.frame = CGRectMake(0, 0, kScreenWidth, CGRectGetHeight(fromViewController.view.frame));
+    toViewController.view.frame = CGRectMake(kScreenWidth, 0, kScreenWidth, CGRectGetHeight(toViewController.view.frame));
     
     // Configure Navi Transition
 
@@ -50,11 +54,11 @@
         ;
     } else {
 
-        naviBarView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 64}];
+        naviBarView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 64}];
         naviBarView.backgroundColor = kNavigationBarColor;
         [containerView addSubview:naviBarView];
 
-        UIView *lineView = [[UIView alloc] initWithFrame:(CGRect){0, 64, 320, 0.5}];
+        UIView *lineView = [[UIView alloc] initWithFrame:(CGRect){0, 64, kScreenWidth, 0.5}];
         lineView.backgroundColor = kNavigationBarLineColor;
         [naviBarView addSubview:lineView];
 
@@ -84,8 +88,8 @@
         toNaviTitle.centerX = 44;
 
         toNaviLeft.x = 0;
-        toNaviTitle.centerX = 320;
-        toNaviRight.x = 390 - toNaviRight.width;
+        toNaviTitle.centerX = kScreenWidth;
+        toNaviRight.x = kScreenWidth+70 - toNaviRight.width;
     
     }
     
@@ -103,9 +107,9 @@
         toNaviLeft.alpha = 1.0;
         toNaviRight.alpha = 1.0;
         toNaviTitle.alpha = 1.0;
-        toNaviTitle.centerX = 160;
+        toNaviTitle.centerX = kScreenWidth/2;
         toNaviLeft.x = 0;
-        toNaviRight.x = 320 - toNaviRight.width;
+        toNaviRight.x = kScreenWidth - toNaviRight.width;
 
         
     } completion:^(BOOL finished) {
@@ -114,9 +118,9 @@
         fromNaviLeft.alpha = 1.0;
         fromNaviRight.alpha = 1.0;
         fromNaviTitle.alpha = 1.0;
-        fromNaviTitle.centerX = 160;
+        fromNaviTitle.centerX = kScreenWidth/2;
         fromNaviLeft.x = 0;
-        fromNaviRight.x = 320 - fromNaviRight.width;
+        fromNaviRight.x = kScreenWidth - fromNaviRight.width;
         
         [naviBarView removeFromSuperview];
 

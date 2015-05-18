@@ -79,7 +79,7 @@ static char const * const kNaviBarView = "kNaviBarView";
     if (!activityView) {
         activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [activityView setColor:[UIColor blackColor]];
-        activityView.frame = (CGRect){278, 25, 35, 35};
+        activityView.frame = (CGRect){[UIScreen mainScreen].bounds.size.width - 42, 25, 35, 35};
         [self.sc_navigationBar addSubview:activityView];
     }
     

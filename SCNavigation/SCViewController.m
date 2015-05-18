@@ -39,7 +39,7 @@ static NSInteger pushedCount = 0;
     [pushButton addTarget:self action:@selector(pushToVC) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:pushButton];
     
-    self.sc_navigationItem.title = [NSString stringWithFormat:@"navi %d", pushedCount];
+    self.sc_navigationItem.title = [NSString stringWithFormat:@"navi %ld", (long)pushedCount];
     
     __weak typeof(SCViewController) *weakSelf = self;
     
@@ -49,7 +49,7 @@ static NSInteger pushedCount = 0;
         }];
     }
     
-    self.sc_navigationItem.rightBarButtonItem = [[SCBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%d", pushedCount] style:SCBarButtonItemStylePlain handler:^(id sender) {
+    self.sc_navigationItem.rightBarButtonItem = [[SCBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%ld", (long)pushedCount] style:SCBarButtonItemStylePlain handler:^(id sender) {
         [weakSelf pushToVC];
     }];
 

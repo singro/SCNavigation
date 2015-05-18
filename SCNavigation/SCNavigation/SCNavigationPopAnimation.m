@@ -9,11 +9,12 @@
 
 static const CGFloat kToBackgroundInitAlpha = 0.08;
 
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+
 @interface SCNavigationPopAnimation ()
 
 @property (nonatomic, strong) UIView      *toBackgroundView;
 @property (nonatomic, strong) UIImageView *shadowImageView;
-@property (nonatomic, strong) UIImageView *maskImageView;
 
 @property (nonatomic, strong) UIView      *naviContainView;
 
@@ -31,11 +32,8 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
         self.shadowImageView = [[UIImageView alloc] initWithFrame:(CGRect){-10, 0, 10, screenHeight}];
         self.shadowImageView.image = [UIImage imageNamed:@"navi_shadow"];
         self.shadowImageView.contentMode = UIViewContentModeScaleToFill;
-        
-        self.maskImageView = [[UIImageView alloc] initWithFrame:(CGRect){0, 20, 320, 44}];
-        self.maskImageView.image = [UIImage imageNamed:@"navi_mask"];
 
-        self.naviContainView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 64}];
+        self.naviContainView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 64}];
         self.naviContainView.backgroundColor = [UIColor colorWithRed:0.774 green:0.368 blue:1.000 alpha:0.810];
 
     }
@@ -54,8 +52,8 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
     [containerView insertSubview:toViewController.view belowSubview:fromViewController.view];
     [containerView insertSubview:self.toBackgroundView belowSubview:fromViewController.view];
     [containerView insertSubview:self.shadowImageView belowSubview:fromViewController.view];
-    toViewController.view.frame = CGRectMake(-90, 0, 320, CGRectGetHeight(toViewController.view.frame));
-    self.toBackgroundView.frame = CGRectMake(-90, 0, 320, CGRectGetHeight(toViewController.view.frame));
+    toViewController.view.frame = CGRectMake(-90, 0, kScreenWidth, CGRectGetHeight(toViewController.view.frame));
+    self.toBackgroundView.frame = CGRectMake(-90, 0, kScreenWidth, CGRectGetHeight(toViewController.view.frame));
     self.shadowImageView.x = - 10;
     self.shadowImageView.alpha = 1.3;
     
@@ -78,11 +76,11 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
         ;
     } else {
         
-        naviBarView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 64}];
+        naviBarView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 64}];
         naviBarView.backgroundColor = kNavigationBarColor;
         [containerView addSubview:naviBarView];
 
-        UIView *lineView = [[UIView alloc] initWithFrame:(CGRect){0, 64, 320, 0.5}];
+        UIView *lineView = [[UIView alloc] initWithFrame:(CGRect){0, 64, kScreenWidth, 0.5}];
         lineView.backgroundColor = kNavigationBarLineColor;
         [naviBarView addSubview:lineView];
 
@@ -96,8 +94,6 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
         
         [containerView addSubview:toNaviTitle];
         [containerView addSubview:fromNaviTitle];
-
-        [containerView addSubview:self.maskImageView];
         
         [containerView addSubview:toNaviLeft];
         [containerView addSubview:toNaviRight];
@@ -109,7 +105,7 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
         fromNaviRight.alpha =  1.0;
         fromNaviTitle.alpha = 1.0;
         fromNaviLeft.x = 0;
-        fromNaviRight.x = 320 - fromNaviRight.width;
+        fromNaviRight.x = kScreenWidth - fromNaviRight.width;
 
         toNaviLeft.alpha = 0.0;
         toNaviRight.alpha = 0.0;
@@ -124,22 +120,22 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
 
         toViewController.view.x = 0;
         self.toBackgroundView.x = 0;
-        fromViewController.view.x = 320;
+        fromViewController.view.x = kScreenWidth;
         
         self.shadowImageView.alpha = 0.2;
-        self.shadowImageView.x = 313;
+        self.shadowImageView.x = kScreenWidth - 7;
         
         
         self.toBackgroundView.alpha = 0.0;
         fromNaviLeft.alpha = 0;
         fromNaviRight.alpha =  0;
         fromNaviTitle.alpha = 0;
-        fromNaviTitle.centerX = 330;
+        fromNaviTitle.centerX = kScreenWidth + 10;
 
         toNaviLeft.alpha = 1.0;
         toNaviRight.alpha = 1.0;
         toNaviTitle.alpha = 1.0;
-        toNaviTitle.centerX = 160;
+        toNaviTitle.centerX = kScreenWidth/2;
 
     } completion:^(BOOL finished) {
         
@@ -147,14 +143,13 @@ static const CGFloat kToBackgroundInitAlpha = 0.08;
             toNaviLeft.alpha = 1.0;
             toNaviRight.alpha = 1.0;
             toNaviTitle.alpha = 1.0;
-            toNaviTitle.centerX = 160;
+            toNaviTitle.centerX = kScreenWidth/2;
             self.toBackgroundView.alpha = kToBackgroundInitAlpha;
         }
 
         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
         
         [naviBarView removeFromSuperview];
-        [self.maskImageView removeFromSuperview];
         [self.toBackgroundView removeFromSuperview];
         
         [toNaviLeft removeFromSuperview];
