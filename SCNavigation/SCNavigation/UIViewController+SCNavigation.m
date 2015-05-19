@@ -9,8 +9,11 @@ static char const * const kNaviHidden = "kSPNaviHidden";
 static char const * const kNaviBar = "kSPNaviBar";
 static char const * const kNaviBarView = "kNaviBarView";
 
-#import "SCViewController+NaviBar.h"
+#import "UIViewController+SCNavigation.h"
+
 #import <objc/runtime.h>
+
+#import "SCShared.h"
 
 @implementation UIViewController (SCNavigation)
 
@@ -65,7 +68,7 @@ static char const * const kNaviBarView = "kNaviBarView";
 }
 
 - (void)naviBeginRefreshing {
-    
+
     UIActivityIndicatorView *activityView;
     for (UIView *view in self.sc_navigationBar.subviews) {
         if ([view isKindOfClass:[UIActivityIndicatorView class]]) {
@@ -75,34 +78,34 @@ static char const * const kNaviBarView = "kNaviBarView";
             [view removeFromSuperview];
         }
     }
-    
+
     if (!activityView) {
         activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         [activityView setColor:[UIColor blackColor]];
         activityView.frame = (CGRect){[UIScreen mainScreen].bounds.size.width - 42, 25, 35, 35};
         [self.sc_navigationBar addSubview:activityView];
     }
-    
+
     [activityView startAnimating];
 
 }
 
 
 - (void)naviEndRefreshing {
-    
+
     UIActivityIndicatorView *activityView;
     for (UIView *view in self.sc_navigationBar.subviews) {
         if ([view isKindOfClass:[UIActivityIndicatorView class]]) {
             activityView = (UIActivityIndicatorView *)view;
         }
     }
-    
+
     if (self.sc_navigationItem.rightBarButtonItem) {
         [self.sc_navigationBar addSubview:self.sc_navigationItem.rightBarButtonItem.view];
     }
-    
+
     [activityView stopAnimating];
-    
+
 }
 
 

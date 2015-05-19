@@ -7,6 +7,7 @@
 
 #import "SCNavigationPushAnimation.h"
 
+#import "SCShared.h"
 
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 
@@ -21,7 +22,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        
+
     }
     return self;
 }
@@ -29,27 +30,27 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *fromViewController = (UIViewController*)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = (UIViewController*)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
+
     UIView *containerView = [transitionContext containerView];
     NSTimeInterval duration = [self transitionDuration:transitionContext];
-    
+
     [containerView addSubview:fromViewController.view];
     [containerView addSubview:toViewController.view];
     fromViewController.view.frame = CGRectMake(0, 0, kScreenWidth, CGRectGetHeight(fromViewController.view.frame));
     toViewController.view.frame = CGRectMake(kScreenWidth, 0, kScreenWidth, CGRectGetHeight(toViewController.view.frame));
-    
+
     // Configure Navi Transition
 
     UIView *naviBarView;
-    
+
     UIView *toNaviLeft;
     UIView *toNaviRight;
     UIView *toNaviTitle;
-    
+
     UIView *fromNaviLeft;
     UIView *fromNaviRight;
     UIView *fromNaviTitle;
-    
+
     if (fromViewController.sc_isNavigationBarHidden || toViewController.sc_isNavigationBarHidden) {
         ;
     } else {
@@ -65,7 +66,7 @@
         toNaviLeft = toViewController.sc_navigationItem.leftBarButtonItem.view;
         toNaviRight = toViewController.sc_navigationItem.rightBarButtonItem.view;
         toNaviTitle = toViewController.sc_navigationItem.titleLabel;
-        
+
         fromNaviLeft = fromViewController.sc_navigationItem.leftBarButtonItem.view;
         fromNaviRight = fromViewController.sc_navigationItem.rightBarButtonItem.view;
         fromNaviTitle = fromViewController.sc_navigationItem.titleLabel;
@@ -73,15 +74,15 @@
         [containerView addSubview:toNaviLeft];
         [containerView addSubview:toNaviTitle];
         [containerView addSubview:toNaviRight];
-        
+
         [containerView addSubview:fromNaviLeft];
         [containerView addSubview:fromNaviTitle];
         [containerView addSubview:fromNaviRight];
-        
+
         fromNaviLeft.alpha = 1.0;
         fromNaviRight.alpha =  1.0;
         fromNaviTitle.alpha = 1.0;
-        
+
         toNaviLeft.alpha = 0.0;
         toNaviRight.alpha = 0.0;
         toNaviTitle.alpha = 0.0;
@@ -90,9 +91,9 @@
         toNaviLeft.x = 0;
         toNaviTitle.centerX = kScreenWidth;
         toNaviRight.x = kScreenWidth+70 - toNaviRight.width;
-    
+
     }
-    
+
     // End configure
 
     [UIView animateWithDuration:duration animations:^{
@@ -103,7 +104,7 @@
         fromNaviRight.alpha =  0;
         fromNaviTitle.alpha = 0;
         fromNaviTitle.centerX = 0;
-        
+
         toNaviLeft.alpha = 1.0;
         toNaviRight.alpha = 1.0;
         toNaviTitle.alpha = 1.0;
@@ -111,27 +112,27 @@
         toNaviLeft.x = 0;
         toNaviRight.x = kScreenWidth - toNaviRight.width;
 
-        
+
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
-        
+
         fromNaviLeft.alpha = 1.0;
         fromNaviRight.alpha = 1.0;
         fromNaviTitle.alpha = 1.0;
         fromNaviTitle.centerX = kScreenWidth/2;
         fromNaviLeft.x = 0;
         fromNaviRight.x = kScreenWidth - fromNaviRight.width;
-        
+
         [naviBarView removeFromSuperview];
 
         [toNaviLeft removeFromSuperview];
         [toNaviTitle removeFromSuperview];
         [toNaviRight removeFromSuperview];
-        
+
         [fromNaviLeft removeFromSuperview];
         [fromNaviTitle removeFromSuperview];
         [fromNaviRight removeFromSuperview];
-        
+
         [toViewController.sc_navigationBar addSubview:toNaviLeft];
         [toViewController.sc_navigationBar addSubview:toNaviTitle];
         [toViewController.sc_navigationBar addSubview:toNaviRight];
@@ -139,7 +140,7 @@
         [fromViewController.sc_navigationBar addSubview:fromNaviLeft];
         [fromViewController.sc_navigationBar addSubview:fromNaviTitle];
         [fromViewController.sc_navigationBar addSubview:fromNaviRight];
-        
+
     }];
 }
 

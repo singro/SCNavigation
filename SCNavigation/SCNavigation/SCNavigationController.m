@@ -8,6 +8,8 @@
 
 #import "SCNavigationController.h"
 
+#import "SCShared.h"
+
 #import "SCNavigationPopAnimation.h"
 #import "SCNavigationPushAnimation.h"
 
@@ -29,40 +31,40 @@
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
     self = [super initWithRootViewController:rootViewController];
     if (self) {
-        
+
         self.enableInnerInactiveGesture = YES;
-        
+
     }
     return self;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
-        
+
         self.enableInnerInactiveGesture = YES;
-        
+
     }
     return self;
 }
 
 - (void)loadView {
     [super loadView];
-    
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.isTransiting = NO;
-    
+
     self.navigationBarHidden = YES;
-    
+
     self.interactivePopGestureRecognizer.delegate = self;
     super.delegate = self;
-    
+
     self.panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanRecognizer:)];
-    
+
 }
 
 #pragma mark - UINavigationDelegate
@@ -75,33 +77,33 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    
+
 
     if (!self.isTransiting) {
         self.interactivePopGestureRecognizer.enabled = NO;
     }
-    
+
     [self configureNavigationBarForViewController:viewController];
 
     [super pushViewController:viewController animated:animated];
-    
+
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated {
-    
+
     if (self.isTransiting) {
         self.isTransiting = NO;
         return nil;
     }
-    
+
     return [super popViewControllerAnimated:animated];
-    
+
 }
 
 #pragma mark UINavigationControllerDelegate
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    
+
     self.isTransiting = YES;
 
 }
@@ -112,9 +114,9 @@
 {
 
     self.isTransiting = NO;
-    
+
     [viewController.view bringSubviewToFront:viewController.sc_navigationBar];
-    
+
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         if (navigationController.viewControllers.count == 1) {
             self.interactivePopGestureRecognizer.delegate = nil;
@@ -124,7 +126,7 @@
             self.interactivePopGestureRecognizer.enabled = YES;
         }
     }
-    
+
     if (self.enableInnerInactiveGesture) {
         BOOL hasPanGesture = NO;
         BOOL hasEdgePanGesture = NO;
@@ -143,7 +145,7 @@
     }
 
     viewController.navigationController.delegate = self;
-    
+
 }
 
 
@@ -152,7 +154,7 @@
                                   animationControllerForOperation:(UINavigationControllerOperation)operation
                                                fromViewController:(UIViewController *)fromVC
                                                  toViewController:(UIViewController *)toVC {
-    
+
     if (operation == UINavigationControllerOperationPop && navigationController.viewControllers.count >= 1 && self.enableInnerInactiveGesture) {
         return [[SCNavigationPopAnimation alloc] init];
     } else if (operation == UINavigationControllerOperationPush) {
@@ -175,25 +177,25 @@
 
 
 - (void)handlePanRecognizer:(UIPanGestureRecognizer*)recognizer {
-    
-    
+
+
     static CGFloat startLocationX = 0;
-    
+
     CGPoint location = [recognizer locationInView:self.view];
-    
+
     CGFloat progress = (location.x - startLocationX) / [UIScreen mainScreen].bounds.size.width;
     progress = MIN(1.0, MAX(0.0, progress));
-    
+
 //    NSLog(@"progress:   %.2f", progress);
-    
+
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         startLocationX = location.x;
         self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
         [self popViewControllerAnimated:YES];
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged) {
-        
-        
+
+
         [self.interactivePopTransition updateInteractiveTransition:progress];
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
@@ -205,7 +207,7 @@
             self.interactivePopTransition.completionSpeed = 0.3;
             [self.interactivePopTransition cancelInteractiveTransition];
         }
-        
+
         self.interactivePopTransition = nil;
     }
 }
@@ -213,7 +215,7 @@
 #pragma mark - Private Helper
 
 - (void)configureNavigationBarForViewController:(UIViewController *)viewController {
-    
+
     if (!viewController.sc_navigationItem) {
         SCNavigationItem *navigationItem = [[SCNavigationItem alloc] init];
         [navigationItem setValue:viewController forKey:@"_sc_viewController"];

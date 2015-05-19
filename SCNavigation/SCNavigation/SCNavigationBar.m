@@ -7,6 +7,8 @@
 
 #import "SCNavigationBar.h"
 
+#import "SCShared.h"
+
 @interface SCNavigationBar ()
 
 @property (nonatomic, strong) UIView *lineView;
@@ -18,15 +20,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+
         self.frame = (CGRect){0, 0, [UIScreen mainScreen].bounds.size.width, 64};
-        
+
         self.backgroundColor = kNavigationBarColor;
-        
+
         self.lineView = [[UIView alloc] initWithFrame:(CGRect){0, 64, [UIScreen mainScreen].bounds.size.width, 0.5}];
         self.lineView.backgroundColor = kNavigationBarLineColor;
         [self addSubview:self.lineView];
-                
+
     }
     return self;
 }
@@ -42,7 +44,7 @@
 #pragma mark - Notifications
 
 - (void)didReceiveThemeChangeNotification {
-    
+
     self.backgroundColor = kNavigationBarColor;
     self.lineView.backgroundColor = kNavigationBarLineColor;
 
