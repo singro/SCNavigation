@@ -14,7 +14,6 @@
 		29571D3019A2EC6000675B56 /* SCNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2519A2EC6000675B56 /* SCNavigationItem.m */; };
 		29571D3119A2EC6000675B56 /* SCNavigationPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2719A2EC6000675B56 /* SCNavigationPopAnimation.m */; };
 		29571D3219A2EC6000675B56 /* SCNavigationPushAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2919A2EC6000675B56 /* SCNavigationPushAnimation.m */; };
-		29571D3319A2EC6000675B56 /* SCViewController+NaviBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2B19A2EC6000675B56 /* SCViewController+NaviBar.m */; };
 		29571D3419A2EC6000675B56 /* SCNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D2D19A2EC6000675B56 /* SCNavigationBar.m */; };
 		29571D3C19A2ED3000675B56 /* ScrollViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D3919A2ED3000675B56 /* ScrollViewFrameAccessor.m */; };
 		29571D3D19A2ED3000675B56 /* ViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29571D3B19A2ED3000675B56 /* ViewFrameAccessor.m */; };
@@ -31,6 +30,7 @@
 		29670A26199D9EEF00B4A59B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29670A08199D9EEE00B4A59B /* UIKit.framework */; };
 		29670A2E199D9EEF00B4A59B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29670A2C199D9EEF00B4A59B /* InfoPlist.strings */; };
 		29670A30199D9EEF00B4A59B /* SCNavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29670A2F199D9EEF00B4A59B /* SCNavigationTests.m */; };
+		299114F31B0AD5F700E08BAE /* UIViewController+SCNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 299114F21B0AD5F700E08BAE /* UIViewController+SCNavigation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,6 @@
 		29571D2719A2EC6000675B56 /* SCNavigationPopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationPopAnimation.m; sourceTree = "<group>"; };
 		29571D2819A2EC6000675B56 /* SCNavigationPushAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationPushAnimation.h; sourceTree = "<group>"; };
 		29571D2919A2EC6000675B56 /* SCNavigationPushAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationPushAnimation.m; sourceTree = "<group>"; };
-		29571D2A19A2EC6000675B56 /* SCViewController+NaviBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCViewController+NaviBar.h"; sourceTree = "<group>"; };
-		29571D2B19A2EC6000675B56 /* SCViewController+NaviBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCViewController+NaviBar.m"; sourceTree = "<group>"; };
 		29571D2C19A2EC6000675B56 /* SCNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNavigationBar.h; sourceTree = "<group>"; };
 		29571D2D19A2EC6000675B56 /* SCNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNavigationBar.m; sourceTree = "<group>"; };
 		29571D3719A2ED3000675B56 /* FrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameAccessor.h; sourceTree = "<group>"; };
@@ -84,6 +82,8 @@
 		29670A2B199D9EEF00B4A59B /* SCNavigationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCNavigationTests-Info.plist"; sourceTree = "<group>"; };
 		29670A2D199D9EEF00B4A59B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29670A2F199D9EEF00B4A59B /* SCNavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCNavigationTests.m; sourceTree = "<group>"; };
+		299114F11B0AD5F700E08BAE /* UIViewController+SCNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SCNavigation.h"; sourceTree = "<group>"; };
+		299114F21B0AD5F700E08BAE /* UIViewController+SCNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SCNavigation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +134,8 @@
 				29571D2719A2EC6000675B56 /* SCNavigationPopAnimation.m */,
 				29571D2819A2EC6000675B56 /* SCNavigationPushAnimation.h */,
 				29571D2919A2EC6000675B56 /* SCNavigationPushAnimation.m */,
-				29571D2A19A2EC6000675B56 /* SCViewController+NaviBar.h */,
-				29571D2B19A2EC6000675B56 /* SCViewController+NaviBar.m */,
+				299114F11B0AD5F700E08BAE /* UIViewController+SCNavigation.h */,
+				299114F21B0AD5F700E08BAE /* UIViewController+SCNavigation.m */,
 				29571D2C19A2EC6000675B56 /* SCNavigationBar.h */,
 				29571D2D19A2EC6000675B56 /* SCNavigationBar.m */,
 			);
@@ -339,11 +339,11 @@
 				29571D3119A2EC6000675B56 /* SCNavigationPopAnimation.m in Sources */,
 				29571D3C19A2ED3000675B56 /* ScrollViewFrameAccessor.m in Sources */,
 				29571D2F19A2EC6000675B56 /* SCNavigationController.m in Sources */,
+				299114F31B0AD5F700E08BAE /* UIViewController+SCNavigation.m in Sources */,
 				29670A15199D9EEE00B4A59B /* SCAppDelegate.m in Sources */,
 				29571D3219A2EC6000675B56 /* SCNavigationPushAnimation.m in Sources */,
 				29571D3419A2EC6000675B56 /* SCNavigationBar.m in Sources */,
 				29670A1B199D9EEE00B4A59B /* SCViewController.m in Sources */,
-				29571D3319A2EC6000675B56 /* SCViewController+NaviBar.m in Sources */,
 				29571D2E19A2EC6000675B56 /* SCBarButtonItem.m in Sources */,
 				29670A11199D9EEE00B4A59B /* main.m in Sources */,
 				29571D3D19A2ED3000675B56 /* ViewFrameAccessor.m in Sources */,
